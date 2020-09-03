@@ -1,0 +1,6 @@
+version: '3'
+services:
+  app:
+    image: "sample-project:$BUILD_TAG" # BUILD_TAG is jenkins global env variable
+    build:
+      context: .
