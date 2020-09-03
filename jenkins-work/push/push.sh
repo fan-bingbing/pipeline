@@ -5,10 +5,10 @@ echo "*******************"
 
 IMAGE="sample-project"
 echo "** Logging in Dockerhub **"
-docker login -u fanbingbing -p $PASS
+docker login -u $DOCKERHUB_USER -p $PASS
 
 echo "** Tagging image **"
-docker tag $IMAGE:$BUILD_TAG fanbingbing/$IMAGE:$BUILD_TAG
+docker tag $IMAGE:$BUILD_TAG $DOCKERHUB_USER/$IMAGE:$BUILD_TAG
 
 echo "** Pushing image **"
-docker push fanbingbing/$IMAGE:$BUILD_TAG
+docker push $DOCKERHUB_USER/$IMAGE:$BUILD_TAG
