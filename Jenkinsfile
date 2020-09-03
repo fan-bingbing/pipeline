@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+        stage('Preparation') {
+         steps {
+            cleanWs()
+            git credentialsId: 'GitHub', url: "https://github.com/fan-bingbing/pipeline.git"
+         }
+       }
         stage('Build') {
             steps {
                 sh '''
